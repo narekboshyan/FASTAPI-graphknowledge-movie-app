@@ -1,8 +1,7 @@
 from fastapi import APIRouter
 
-from db import driver
-from logger import logger
-from models import Movie
+from ..config import driver, logger
+from ..models import Movie
 
 router = APIRouter(prefix="/movies", tags=["movies"])
 

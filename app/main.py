@@ -3,9 +3,8 @@ import time
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from db import driver
-from logger import logger
-from routers import movies, people, relationships, seed
+from .config import driver, logger
+from .routers import movies, people, relationships, seed, graph
 
 app = FastAPI(title="Movie KG API", version="0.1.0")
 
@@ -45,6 +44,7 @@ app.include_router(movies.router)
 app.include_router(people.router)
 app.include_router(relationships.router)
 app.include_router(seed.router)
+app.include_router(graph.router)
 
 
 @app.get("/")

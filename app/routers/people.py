@@ -1,8 +1,7 @@
 from fastapi import APIRouter
 
-from db import driver
-from logger import logger
-from models import Person
+from ..config import driver, logger
+from ..models import Person
 
 router = APIRouter(prefix="/people", tags=["people"])
 

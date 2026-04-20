@@ -1,0 +1,26 @@
+services:
+  api:
+    command:
+      - fastapi
+      - dev
+      - app/main.py
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --reload-dir
+      - app
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /code/app
+          ignore:
+            - __pycache__/
+            - "*.pyc"
+
+        - action: rebuild
+          path: ./requirements.txt
+
+        - action: rebuild
+          path: ./Dockerfile

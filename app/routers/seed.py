@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 
-from db import driver
-from logger import logger
+from ..config import driver, logger
 
 router = APIRouter(tags=["seed"])
 

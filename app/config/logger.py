@@ -36,7 +36,7 @@ logging.basicConfig(
 
 logger = logging.getLogger("movie-api")
 
-# Route uvicorn logs through rich too → single consistent colored stream
+# Route uvicorn logs through rich → single consistent colored stream
 for name in ("uvicorn", "uvicorn.access", "uvicorn.error"):
     lg = logging.getLogger(name)
     lg.handlers = [handler]

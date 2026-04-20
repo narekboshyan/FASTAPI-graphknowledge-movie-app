@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1 \
     FORCE_COLOR=1 \
     TERM=xterm-256color
 
-WORKDIR /app
+WORKDIR /code
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["fastapi", "run", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["fastapi", "run", "app/main.py", "--host", "0.0.0.0", "--port", "8000"]
